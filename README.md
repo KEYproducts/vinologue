@@ -5,7 +5,7 @@ vinologue
 自分が飲んだワインの写真・情報・テイスティングシートを一元管理。本格的なワインの記録を手軽につけられるアプリ。
 
 # URL
-()[https://vinologue.onrender.com]
+https://vinologue.onrender.com
 
 # テスト用アカウント
 
@@ -24,7 +24,7 @@ vinologue
 自分がワインエキスパートの勉強をしていた際に、試験対策としてテイスティングをよく行っていました。その際にはテイスティングシートに記入を行うが、紙ベースのため、飲んだワインの写真とシートの保管場所が別々になってしまい記録の管理が大変でした。また、飲食店や展示会などでテイスティングを行った際に、手軽にテイスティングの記録がつけられるツールが欲しかったため、本格的なワインの記録を手軽につけられるアプリを開発しました。
 
 # 洗い出した要件
-(要件定義書)[https://docs.google.com/spreadsheets/d/1ta_3GaoYquenckBBGd-YntBVzTxk_-qlm5A6bHPTO4g/edit?usp=sharing]
+[要件定義書](https://docs.google.com/spreadsheets/d/1ta_3GaoYquenckBBGd-YntBVzTxk_-qlm5A6bHPTO4g/edit?usp=sharing)
 
 # 実装した機能についての画像やGIFおよびその説明
 

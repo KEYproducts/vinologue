@@ -3,7 +3,10 @@ class Profile < ApplicationRecord
   
   enum sex: { male: 1, female: 2, not_answer: 3 }
 
-  validates :sex,           presence: true
-  validates :age,           numericality: { greater_than_or_equal_to: 20 }
-  validates :prefecture_id, numericality: { other_than: 1 }
+  with_options presence: true do
+    validates :sex
+    validates :age, numericality: { greater_than_or_equal_to: 20, message: "must be over 20. And input half-width characters" }
+  end
+  validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
 end
+

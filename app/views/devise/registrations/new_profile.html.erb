@@ -8,7 +8,7 @@
       <%= form_with(model: @profile, url: profiles_path, local: true) do |f| %>
         <h1 class="h3 mb-3 mt-5 fw-normal">プロフィール登録</h1>
         
-        <%#= render "devise/shared/error_messages", resource: @profile %>
+        <%= render "devise/shared/error_messages", resource: @profile %>
 
         <div class="radio-btn-sex p-2">
           <div class="mb-1">性別</div>

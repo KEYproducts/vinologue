@@ -1,4 +1,4 @@
-  <div class="container-fuild sign-up">
+  <div class="container-fuild sign-in">
     <div class="app-title">VINOLOGUE</div>
     <div class="app-philosophy">ワインを記録し、管理する。
       <br>Wine Lover による Wine Lover のためのテイスティングノート作成アプリ
@@ -11,19 +11,19 @@
 
         <%= render "devise/shared/error_messages", resource: resource %>
     
-        <div class="form-floating mt-2">
+        <div class="form-floating mb-2">
           <%= f.text_field :nickname, class:"form-control", id:"nickname", placeholder:"nicknaem" %>
           <label for="nickname">Nickname</label>
         </div>
-        <div class="form-floating mt-2">
+        <div class="form-floating mb-2">
           <%= f.email_field :email, class:"form-control", id:"email", placeholder:"name@example.com" %>
           <label for="email">Email address</label>
         </div>
-        <div class="form-floating mt-2">
+        <div class="form-floating mb-2">
           <%= f.password_field :password, class:"form-control", id:"password", placeholder:"6文字以上の半角英数字" %>
           <label for="password">Password</label>
         </div>
-        <div class="form-floating mt-2">
+        <div class="form-floating mb-2">
           <%= f.password_field :password_confirmation, class:"form-control", id:"password-confirmation", placeholder:"同じパスワードを入力してください" %>
           <label for="password-confirmation">Password Comfirmation</label>
         </div>

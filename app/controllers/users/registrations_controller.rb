@@ -19,6 +19,25 @@ class Users::RegistrationsController < Devise::RegistrationsController
     render :new_profile
   end
 
+  def create_profile
+    @user = User.new(session["devise.regist_data"]["user"])
+    @profile = Profile.new(profile_params)
+      unless @profile.valid?
+        render :new_profile and return
+      end
+    @user.build_profile(@profile.attributes)
+    @user.save
+    session["devise.regist_data"]["user"].clear
+    sign_in(:user, @user)
+    redirect_to root_path
+  end
+
+  private
+
+ def profile_params
+   params.require(:profile).permit(:sex, :age, :prefecture_id)
+ end
+
   # GET /resource/sign_up
   # def new
   #   super

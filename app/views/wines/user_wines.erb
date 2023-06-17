@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="navigation-bar container">
+    <%= link_to "Vinologue", root_path, class:"navbar-brand header-logo" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="#"><%= current_user.nickname %> さん</a>
+        <%= link_to "ログアウト", destroy_user_session_path, class:"nav-link", method: :delete %>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="search-bars container">
+  <div class="row">
+    <div class="search-bar-holder d-flex col-sm-6 col-lg-3 mb-2">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="キーワードを入力">
+        <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i> 検索</button>
+      </div>
+    </div>
+    <div class="search-bar-holder d-flex col-sm-6 col-lg-3 mb-2">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="キーワードを入力">
+        <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i> 検索</button>
+      </div>
+    </div>
+    <div class="search-bar-holder d-flex col-sm-6 col-lg-3 mb-2">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="キーワードを入力">
+        <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i> 検索</button>
+      </div>
+    </div>
+    <div class="search-bar-holder d-flex col-sm-6 col-lg-3 mb-2">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="キーワードを入力">
+        <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i> 検索</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="search-bar-holder">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="キーワードを入力">
+        <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i> 検索</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wine-items container">
+  <div class="row">
+    <div class="col-sm-4 col-lg-2 mb-5">
+      <div class="card bg-light text-white">
+        <%= image_tag "wine_sample.jpg", class:"card-img", alt:"..." %>
+        <div class="wine-digest card-img-overlay">
+          <h5 class="card-title">オーパスワン</h5>
+          <p class="card-text">★★★★★</p>
+          <p class="card-text">2023/06/22</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4 col-lg-2 mb-5">
+      <div class="card bg-light text-white">
+        <%= image_tag "wine.JPG", class:"card-img", alt:"..." %>
+        <div class="wine-digest card-img-overlay">
+          <h5 class="card-title">オーパスワン</h5>
+          <p class="card-text">★★★★★</p>
+          <p class="card-text">2023/06/22</p>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
+
+<%= link_to(new_wine_path, class: 'wine-new-btn') do %>
+  <span class='wine-new-btn-text'>ワインを登録</span>
+  <%= image_tag 'icon_glass.png' , size: '185x50' ,class: "wine-new-btn-icon" %>
+<% end %>

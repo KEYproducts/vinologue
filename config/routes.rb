@@ -13,5 +13,5 @@ Rails.application.routes.draw do
     get 'wines', to: 'wines#user_wines'
   end
 
-  root to: 'users#index'
+  root to: 'wines#user_wines'
 end

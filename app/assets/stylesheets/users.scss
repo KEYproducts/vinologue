@@ -11,7 +11,7 @@
   flex-direction: column;
   align-items: center;
   padding-top: 40px;
-  // padding-bottom: 40px;
+  padding-bottom: 40px;
   background-color: #fff9f9;
 }
 
@@ -26,18 +26,18 @@
   text-align: center;
 }
 
-.form-signin {
+.form-signup {
   width: 100%;
   max-width: 330px;
   padding: 15px;
-  margin: 0 auto;
+  margin: auto;
 }
 
-.form-signin h1 {
+.form-signup h1 {
   text-align: center;
 }
 
-.form-signin p {
+.form-signup p {
   text-align: right;
 }
 
@@ -57,4 +57,25 @@
 /*プロフィール登録ページ*/
 .radio-btn-sex {
   margin-top: 40px;
+}
+
+/*ログインページ*/
+.login-flash-message {
+  text-align: center;
+  color: red;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin h1 {
+  text-align: center;
+}
+
+.form-signin p {
+  text-align: right;
 }

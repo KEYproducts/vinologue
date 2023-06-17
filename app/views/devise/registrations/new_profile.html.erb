@@ -1,43 +1,40 @@
-  <div class="container-fuild sign-in">
-    <div class="app-title">VINOLOGUE</div>
-    <div class="app-philosophy">ワインを記録し、管理する。
-      <br>Wine Lover による Wine Lover のためのテイスティングノート作成アプリ
-    </div>
-    
-    <main class="form-signin">
-      <%= form_with(model: @profile, url: profiles_path, local: true) do |f| %>
-        <h1 class="h3 mb-3 mt-5 fw-normal">プロフィール登録</h1>
-        
-        <%= render "devise/shared/error_messages", resource: @profile %>
+<div class="container-fuild sign-in">
 
-        <div class="radio-btn-sex p-2">
-          <div class="mb-1">性別</div>
-          <div class="form-check form-check-inline">
-            <%= f.radio_button :sex, :male, class: "form-check-input" %>
-            <%= f.label :sex_male, "男性", class: "form-check-label" %>
-          </div>
-          <div class="form-check form-check-inline">
-            <%= f.radio_button :sex, :female, class: "form-check-input" %>
-            <%= f.label :sex_female, "女性", class: "form-check-label" %>
-          </div>
-          <div class="form-check form-check-inline">
-            <%= f.radio_button :sex, :not_answer, class: "form-check-input" %>
-            <%= f.label :sex_not_answer, "回答しない", class: "form-check-label" %>
-          </div>
-        </div>
-        <div class="form-floating mb-2">
-          <%= f.text_field :age, class:"form-control", id:"age", placeholder:"半角数字 20歳以上" %>
-          <label for="age">年齢</label>
-        </div>
-        <div class="form-floating mb-2">
-          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"form-select", id:"prefecture" }) %>
-          <label for="prefecture">お住まい</label>
-        </div>
+  <main class="form-signup">
+    <%= form_with(model: @profile, url: profiles_path, local: true) do |f| %>
+      <h1 class="h3 mb-3 mt-5 fw-normal">プロフィール登録</h1>
+      <p>▶▶▶ <a href="/users/sign_in" class="link-login">ログイン</a></p>
+      
+      <%= render "devise/shared/error_messages", resource: @profile %>
 
-        
-        <div class="btn-holder">
-          <%= f.submit "Sign up", class:"w-100 btn btn-lg btn-secondary" %>
+      <div class="radio-btn-sex p-2">
+        <div class="mb-1">性別</div>
+        <div class="form-check form-check-inline">
+          <%= f.radio_button :sex, :male, class: "form-check-input" %>
+          <%= f.label :sex_male, "男性", class: "form-check-label" %>
         </div>
-      <% end %>
-    </main>
-  </div>
+        <div class="form-check form-check-inline">
+          <%= f.radio_button :sex, :female, class: "form-check-input" %>
+          <%= f.label :sex_female, "女性", class: "form-check-label" %>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= f.radio_button :sex, :not_answer, class: "form-check-input" %>
+          <%= f.label :sex_not_answer, "回答しない", class: "form-check-label" %>
+        </div>
+      </div>
+      <div class="form-floating mb-2">
+        <%= f.text_field :age, class:"form-control", id:"age", placeholder:"半角数字 20歳以上" %>
+        <label for="age">年齢</label>
+      </div>
+      <div class="form-floating mb-2">
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"form-select", id:"prefecture" }) %>
+        <label for="prefecture">お住まい</label>
+      </div>
+
+      
+      <div class="btn-holder">
+        <%= f.submit "Sign up", class:"w-100 btn btn-lg btn-secondary" %>
+      </div>
+    <% end %>
+  </main>
+</div>

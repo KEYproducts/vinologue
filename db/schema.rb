@@ -36,9 +36,20 @@ ActiveRecord::Schema.define(version: 2023_06_17_115216) do
   end
 
   create_table "wines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "type_id", null: false
+    t.integer "country_id", null: false
+    t.string "area"
+    t.integer "variety_id"
+    t.string "vintage"
+    t.integer "star_id", null: false
+    t.text "comment"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_wines_on_user_id"
   end
 
   add_foreign_key "profiles", "users"
+  add_foreign_key "wines", "users"
 end

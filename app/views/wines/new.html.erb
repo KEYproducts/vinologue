@@ -1,2 +1,82 @@
-<h1>Wines#new</h1>
-<p>Find me in app/views/wines/new.html.erb</p>
+<%= render "shared/header" %>
+
+<div class="container-fluid">
+  <div class="winenote-new col-sm-10 col-lg-8">
+    <h2 class="winenote-new-title">Let's make your wine note</h2>
+    <div class="container-winenote-new-main">
+      <div class="winenote-new-main col-10">
+        <%= form_with(model: @wine, url: wines_path, local: true) do |f| %>
+          <div class="input-filed-winenote row">
+            <label for="wine_images" class="col-sm-2 col-form-label">ワインの写真</label>
+            <div class="col-sm-5">
+              <%= f.file_field :images, name: 'wine[images][]', data: {index: 0}, class:"form-control" %>
+            </div>
+            <div class="col-sm-5">
+              <%= f.file_field :images, name: 'wine[images][]', data: {index: 1}, class:"form-control" %>
+            </div>
+          </div>
+
+          <div class="input-filed-winenote row">
+            <label for="wine-name" class="col-sm-2 col-form-label">ワイン名</label>
+            <div class="col-sm-10">
+              <%= f.text_field :name, class:"form-control", id:"wine-name", placeholder:"例）オーパス・ワン" %>
+            </div>
+          </div>
+
+          <div class="input-filed-winenote row">
+            <label for="wine-type" class="col-sm-2 col-form-label">ワインの種別</label>
+            <div class="col-sm-5">
+              <%= f.collection_select(:type_id, Type.all, :id, :name, { include_blank: "---" }, {class:"form-select", id:"wine-type" }) %>
+            </div>
+          </div>
+
+          <div class="input-filed-winenote row">
+            <label for="wine-country" class="col-sm-2 col-form-label">産地（国）</label>
+            <div class="col-sm-5">
+              <%= f.collection_select(:country_id, Country.all, :id, :name, { include_blank: "---" }, {class:"form-select", id:"wine-country" }) %>
+            </div>
+          </div>
+
+          <div class="input-filed-winenote row">
+            <label for="wine-area" class="col-sm-2 col-form-label">産地（地域）</label>
+            <div class="col-sm-10">
+              <%= f.text_field :area, class:"form-control", id:"wine-area", placeholder:"例）ボルドー" %>
+            </div>
+          </div>
+
+          <div class="input-filed-winenote row">
+            <label for="wine-variety" class="col-sm-2 col-form-label">ブドウ品種</label>
+            <div class="col-sm-5">
+              <%= f.collection_select(:variety_id, Variety.all, :id, :name, { include_blank: "---" }, {class:"form-select", id:"wine-variety" }) %>
+            </div>
+          </div>
+
+          <div class="input-filed-winenote row">
+            <label for="wine-vintage" class="col-sm-2 col-form-label">生産年</label>
+            <div class="col-sm-5">
+              <%= f.text_field :vintage, class:"form-control", id:"wine-vintage", placeholder:"例）2000  ※半角数字で入力" %>
+            </div>
+          </div>
+
+          <div class="input-filed-winenote row">
+            <label for="wine-star" class="col-sm-2 col-form-label">評価</label>
+            <div class="col-sm-5">
+              <%= f.collection_select(:star_id, Star.all, :id, :name, { include_blank: "---" }, {class:"form-select", id:"wine-star" }) %>
+            </div>
+          </div>
+
+          <div class="input-filed-winenote row">
+            <label for="wine-comment" class="col-sm-2 col-form-label">コメント</label>
+            <div class="col-sm-10">
+              <%= f.text_area :comment, class:"form-control", id:"wine-comment", placeholder:"コメントやメモしておきたいことをどうぞ", rows: 5 %>
+            </div>
+          </div>
+
+          <div class="btn-holder-wine">
+            <%= f.submit "作成", class:"btn-create w-100 btn btn-lg btn btn-secondary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

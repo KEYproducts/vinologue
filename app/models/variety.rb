@@ -32,7 +32,7 @@ class Variety < ActiveHash::Base
     { id: 30,  name: 'アルバリーニョ' },
     { id: 31,  name: 'トロンテス' },
     { id: 32,  name: '甲州' },
-    { id: 33,  name: 'ピノ4・ムニエ' },
+    { id: 33,  name: 'ピノ・ムニエ' },
     { id: 34,  name: 'プロセッコ' },
     { id: 35,  name: 'マカベオ' },
     { id: 36,  name: 'パレリャーダ' },

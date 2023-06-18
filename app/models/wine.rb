@@ -7,4 +7,6 @@ class Wine < ApplicationRecord
   belongs_to :country
   belongs_to :variety
   belongs_to :star
+
+  validates :name, :type_id, :country_id, :star_id, presence: true
 end

@@ -6,6 +6,9 @@
     <div class="container-winenote-new-main">
       <div class="winenote-new-main col-10">
         <%= form_with(model: @wine, url: wines_path, local: true) do |f| %>
+
+          <%= render 'shared/error_messages', model: f.object %>
+          
           <div class="input-filed-winenote row">
             <label for="wine_images" class="col-sm-2 col-form-label">ワインの写真</label>
             <div class="col-sm-5">

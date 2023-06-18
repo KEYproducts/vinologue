@@ -5,7 +5,7 @@
       <h1 class="h3 mb-3 mt-5 fw-normal">プロフィール登録</h1>
       <p>▶▶▶ <a href="/users/sign_in" class="link-login">ログイン</a></p>
       
-      <%= render "devise/shared/error_messages", resource: @profile %>
+      <%= render 'shared/error_messages', model: f.object %>
 
       <div class="radio-btn-sex p-2">
         <div class="mb-1">性別</div>

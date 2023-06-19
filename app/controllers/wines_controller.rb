@@ -18,6 +18,9 @@ class WinesController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
   def wine_params
     params.require(:wine).permit(:name, :type_id, :country_id, :area, :variety_id, :country_id, :vintage, :star_id,  :comment, {images: []}

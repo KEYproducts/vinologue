@@ -60,6 +60,7 @@ gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem 'active_hash'
 gem 'rails-i18n'
+gem 'ransack'
 
 group :production do
   gem 'pg'

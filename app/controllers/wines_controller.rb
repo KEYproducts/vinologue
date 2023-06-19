@@ -22,6 +22,15 @@ class WinesController < ApplicationController
     @wine = Wine.find(params[:id])
   end
 
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
   private
   def wine_params
     params.require(:wine).permit(:name, :type_id, :country_id, :area, :variety_id, :country_id, :vintage, :star_id,  :comment, {images: []}

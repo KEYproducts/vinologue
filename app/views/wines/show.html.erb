@@ -1,0 +1,56 @@
+<%= render "shared/header" %>
+
+<div class="container">
+  <div class="winenote-show col-sm-10">
+    <div class="row">
+      <div class="container-winenote-show-photos col-sm-12 col-lg-6 d-flex justify-content-evenly">
+        <div class="winenote-show-photo col-5 img-hidden">
+          <% if @wine.images[0].nil? %>
+            <%= image_tag "no_image.png", class:"img-thumbnail", alt:"..." %>
+          <% else %>
+            <%= image_tag @wine.images[0], class:"img-thumbnail", alt:"..." %>
+          <% end %>
+        </div>
+        <div class="winenote-show-photo col-5">
+          <% if @wine.images[1].nil? %>
+            <%= image_tag "no_image.png", class:"img-thumbnail", alt:"..." %>
+          <% else %>
+            <%= image_tag @wine.images[1], class:"img-thumbnail", alt:"..." %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="container-winenote-show-details col-sm-12 col-lg-6 d-flex justify-content-center">
+        <div class="winenote-show-details w-100">
+          <div class="winenote-show-star"><%= @wine.star.name %></div>
+          <div class="winenote-show-name h3"><%= @wine.name %></div>
+          <div class="winenote-show-detail row">
+            <div class="winenote-show-detail-title col-3">ワインの種別</div>
+            <div class="winenote-show-detail-content col-9"><%= @wine.type.name %></div>
+          </div>
+          <div class="winenote-show-detail row">
+            <div class="winenote-show-detail-title col-3">産地（国）</div>
+            <div class="winenote-show-detail-content col-9"><%= @wine.country.name %></div>
+          </div>
+          <div class="winenote-show-detail row">
+            <div class="winenote-show-detail-title col-3">産地（地域）</div>
+            <div class="winenote-show-detail-content col-9"><%= @wine.area %></div>
+          </div>
+          <div class="winenote-show-detail row">
+            <div class="winenote-show-detail-title col-3">ぶどう品種</div>
+            <div class="winenote-show-detail-content col-9"><%= @wine.variety.name unless @wine.variety.nil? %></div>
+          </div>
+          <div class="winenote-show-detail row">
+            <div class="winenote-show-detail-title col-3">生産年</div>
+            <div class="winenote-show-detail-content col-9"><%= @wine.vintage %></div>
+          </div>
+          <div class="winenote-show-detail row">
+            <div class="winenote-show-detail-title col-3">コメント</div>
+            <div class="winenote-show-detail-content col-9"><%= @wine.comment %></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

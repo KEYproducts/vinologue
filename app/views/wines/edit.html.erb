@@ -2,7 +2,7 @@
 
 <div class="container-fluid">
   <div class="winenote-new col-sm-10 col-lg-8">
-    <h2 class="winenote-new-title">Let's make your wine note</h2>
+    <h2 class="winenote-new-title">Edit your wine note</h2>
     <div class="container-winenote-new-main">
       <div class="winenote-new-main col-10">
         <%= form_with model: @wine, local: true do |f| %>
@@ -76,7 +76,7 @@
           </div>
 
           <div class="btn-holder-wine">
-            <%= f.submit "作成", class:"btn-create w-100 btn btn-lg btn btn-secondary" %>
+            <%= f.submit "編集", class:"btn-create w-100 btn btn-lg btn btn-secondary" %>
           </div>
         <% end %>
       </div>

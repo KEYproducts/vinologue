@@ -3,15 +3,15 @@
 <div class="container">
   <div class="winenote-show col-sm-10">
     <div class="row">
-      <div class="container-winenote-show-photos col-sm-12 col-lg-6 d-flex justify-content-evenly">
-        <div class="winenote-show-photo col-5 img-hidden">
+      <div class="container-winenote-show-photos col-sm-12 col-lg-5 d-flex justify-content-evenly">
+        <div class="winenote-show-photo col-6 img-hidden">
           <% if @wine.images[0].nil? %>
             <%= image_tag "no_image.png", class:"img-thumbnail", alt:"..." %>
           <% else %>
             <%= image_tag @wine.images[0], class:"img-thumbnail", alt:"..." %>
           <% end %>
         </div>
-        <div class="winenote-show-photo col-5">
+        <div class="winenote-show-photo col-6">
           <% if @wine.images[1].nil? %>
             <%= image_tag "no_image.png", class:"img-thumbnail", alt:"..." %>
           <% else %>
@@ -20,7 +20,7 @@
         </div>
       </div>
 
-      <div class="container-winenote-show-details col-sm-12 col-lg-6 d-flex justify-content-center">
+      <div class="container-winenote-show-details col-sm-12 col-lg-7 d-flex justify-content-center">
         <div class="winenote-show-details w-100">
           <div class="winenote-show-star"><%= @wine.star.name %></div>
           <div class="winenote-show-name h3"><%= @wine.name %></div>
@@ -51,6 +51,16 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
 
+<div class="container">
+  <div class="winenote-edit col-sm-10 d-flex justify-content-evenly">
+    <div class="d-grid col-4">
+      <%= link_to "ワインノートを編集する", edit_wine_path(@wine), class:"btn btn-outline-secondary"%>
+    </div>
+    <div class="d-grid col-4">
+      <%= link_to "ワインノートを削除する", wine_path(@wine), method: :delete, class:"btn btn-outline-secondary"%>
+    </div>
   </div>
 </div>

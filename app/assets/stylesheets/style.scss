@@ -59,15 +59,10 @@ body {
   margin-top: 20px;
 }
 
-/*プロフィール登録ページ*/
-.radio-btn-sex {
-  margin-top: 40px;
-}
-
 /*ログインページ*/
 .login-flash-message {
+  margin-top: 20px;
   text-align: center;
-  color: red;
 }
 
 .form-signin {
@@ -91,14 +86,11 @@ body {
   margin-top: 10px;
 }
 
-
 /******************************************************/
 // ワイン登録機能
 /******************************************************/
 
 /*ナビゲーションバー*/
-// .navigation-bar {}
-
 .navbar {
   background-color: #331215; 
 }
@@ -125,6 +117,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: end;
+}
+
+.wine-star {
+  color: #daa520;
 }
 
 /*マイページ  ワイン登録ボタン*/

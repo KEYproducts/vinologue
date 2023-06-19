@@ -5,7 +5,8 @@ class Profile < ApplicationRecord
 
   with_options presence: true do
     validates :sex
-    validates :age, numericality: { greater_than_or_equal_to: 20, message: 'must be over 20. And input half-width characters' }
+    validates :age, numericality: { only_integer: true, message: 'は半角数字で入力してください' },
+                    inclusion: { in: 20..150, message: 'が20歳未満の方は登録できません' }
   end
-  validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :prefecture_id, numericality: { other_than: 1, message: "を入力してください" }
 end

@@ -183,3 +183,36 @@ body {
 .btn-create {
   background-color: aquamarine;
 }
+
+/*ワイン詳細表示ページ*/
+.winenote-show {
+  padding-top: 80px;
+  margin: 0 auto;
+}
+
+.container-winenote-show-photos {
+  margin-bottom: 30px;
+}
+
+.container-winenote-show-details {
+  margin-bottom: 30px;
+  padding: 0 10px;
+}
+
+.winenote-show-details {
+  background-color: #f8f8ff;
+  border: 1px solid #c6c6cc;
+  border-radius: 5px;
+  padding: 20px;
+  color:#331215;
+}
+
+.winenote-show-name {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #c6c6cc;
+}
+
+.winenote-show-detail {
+  padding-top: 10px;
+}
+

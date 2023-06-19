@@ -1,5 +1,5 @@
 class WinesController < ApplicationController
-  before_action :set_wine, only: [:show, :edit, :update]
+  before_action :set_wine, only: [:show, :edit, :update, :destroy]
 
   def user_wines
     @user = User.find(current_user.id)
@@ -34,6 +34,8 @@ class WinesController < ApplicationController
   end
 
   def destroy
+    @wine.destroy
+    redirect_to root_path
   end
 
   private

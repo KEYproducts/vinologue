@@ -60,7 +60,7 @@
       <%= link_to "ワインノートを編集する", edit_wine_path(@wine), class:"btn btn-outline-secondary"%>
     </div>
     <div class="d-grid col-4">
-      <%= link_to "ワインノートを削除する", root_path, class:"btn btn-outline-secondary"%>
+      <%= link_to "ワインノートを削除する", wine_path(@wine), method: :delete, class:"btn btn-outline-secondary"%>
     </div>
   </div>
 </div>

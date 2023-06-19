@@ -1,4 +1,10 @@
 class WinesController < ApplicationController
+
+  def user_wines
+    @user = User.find(current_user.id)
+    @wines = @user.wines.order("created_at DESC")
+  end
+
   def new
     @wine = Wine.new
   end

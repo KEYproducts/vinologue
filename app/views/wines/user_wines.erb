@@ -38,23 +38,29 @@
 </div>
 
 <div class="wine-items container">
+  <h3 class="wine-items-headline"><%= current_user.nickname %> さんのワインノート</h3>
   <div class="row">
+    <% @wines.each do |wine| %>
+    <div class="col-sm-4 col-lg-2 mb-5">
+      <div class="card bg-light text-white">
+        <% if wine.images[0].nil? %>
+          <%= image_tag "wine_sample.jpg", class:"card-img", alt:"..." %>
+        <% else %>
+          <%= image_tag wine.images[0], class:"card-img", alt:"..." %>
+        <% end %>
+        <div class="wine-digest card-img-overlay">
+          <h5 class="card-title"><%= wine.name %></h5>
+          <p class="card-text"><%= wine.star.name %></p>
+          <p class="card-text"><%= wine.created_at %></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
     <div class="col-sm-4 col-lg-2 mb-5">
       <div class="card bg-light text-white">
         <%= image_tag "wine_sample.jpg", class:"card-img", alt:"..." %>
         <div class="wine-digest card-img-overlay">
-          <h5 class="card-title">オーパスワン</h5>
-          <p class="card-text">★★★★★</p>
-          <p class="card-text">2023/06/22</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-4 col-lg-2 mb-5">
-      <div class="card bg-light text-white">
-        <%= image_tag "wine.JPG", class:"card-img", alt:"..." %>
-        <div class="wine-digest card-img-overlay">
-          <h5 class="card-title">オーパスワン</h5>
+          <h5 class="card-title">見本のカード</h5>
           <p class="card-text">★★★★★</p>
           <p class="card-text">2023/06/22</p>
         </div>

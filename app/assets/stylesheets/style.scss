@@ -96,7 +96,7 @@ body {
 // ワイン登録機能
 /******************************************************/
 
-/*マイページ*/
+/*ナビゲーションバー*/
 // .navigation-bar {}
 
 .navbar {
@@ -107,12 +107,18 @@ body {
   font-weight: 600;
 }
 
+/*マイページ*/
 .search-bars {
   margin-top: 40px;
 }
 
 .wine-items {
-  margin-top: 80px;
+  margin-top: 40px;
+}
+
+.wine-items-headline {
+  color:#331215;
+  margin-bottom: 20px;
 }
 
 .wine-digest {

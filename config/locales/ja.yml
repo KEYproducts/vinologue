@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+      profile:
+        sex: 性別
+        age: 年齢
+        prefecture_id: お住まい
+      wine:
+        name: ワイン名
+        type_id: ワインの種別
+        country_id: 産地（国）
+        star_id: 評価
+  time:
+    formats:
+      default: "%Y-%m-%d"

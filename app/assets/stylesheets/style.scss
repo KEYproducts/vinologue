@@ -59,15 +59,10 @@ body {
   margin-top: 20px;
 }
 
-/*プロフィール登録ページ*/
-.radio-btn-sex {
-  margin-top: 40px;
-}
-
 /*ログインページ*/
 .login-flash-message {
+  margin-top: 20px;
   text-align: center;
-  color: red;
 }
 
 .form-signin {
@@ -91,14 +86,11 @@ body {
   margin-top: 10px;
 }
 
-
 /******************************************************/
 // ワイン登録機能
 /******************************************************/
 
-/*マイページ*/
-// .navigation-bar {}
-
+/*ナビゲーションバー*/
 .navbar {
   background-color: #331215; 
 }
@@ -107,18 +99,28 @@ body {
   font-weight: 600;
 }
 
+/*マイページ*/
 .search-bars {
   margin-top: 40px;
 }
 
 .wine-items {
-  margin-top: 80px;
+  margin-top: 40px;
+}
+
+.wine-items-headline {
+  color:#331215;
+  margin-bottom: 20px;
 }
 
 .wine-digest {
   display: flex;
   flex-direction: column;
   justify-content: end;
+}
+
+.wine-star {
+  color: #daa520;
 }
 
 /*マイページ  ワイン登録ボタン*/

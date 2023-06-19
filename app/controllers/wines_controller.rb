@@ -1,5 +1,5 @@
 class WinesController < ApplicationController
-  before_action :set_wine, only: [:show, :edit]
+  before_action :set_wine, only: [:show, :edit, :update]
 
   def user_wines
     @user = User.find(current_user.id)
@@ -26,6 +26,11 @@ class WinesController < ApplicationController
   end
 
   def update
+    if @wine.update(wine_params)
+      redirect_to wine_path(@wine)
+    else
+      render :edit
+    end
   end
 
   def destroy

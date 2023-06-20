@@ -3,12 +3,15 @@
 <%= render "shared/search_bar" %>
 
 <div class="wine-items container">
-  <h3 class="wine-items-headline"><%= current_user.nickname %> さんのワインノート</h3>
+  <div class="wine-items-headline">
+    <h3><%= current_user.nickname %> さんのワインノート</h3>
+  </div>
   <div class="row">
-  <% @wines.each do |wine| %>
-    <%= render partial: "shared/index", locals: { wine: wine } %>
-  <% end %>
-</div>
+    <% @wines.each do |wine| %>
+      <%= render partial: "shared/index", locals: { wine: wine } %>
+    <% end %>
+  </div>
+
   
 <%# 最後に消す %>
   <div class="col-sm-4 col-lg-2 mb-5">

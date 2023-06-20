@@ -40,7 +40,7 @@ class WinesController < ApplicationController
   end
 
   def search
-    @results = @q.result
+    @wines = @q.result.order("created_at DESC")
   end
 
   private
@@ -54,6 +54,10 @@ class WinesController < ApplicationController
   end
 
   def set_q
-    @q = Wine.ransack(params[:q])
+    if params[:q]&.dig(:name_or_area_or_vintage_or_comment)
+      squished_keywords = params[:q][:name_or_area_or_vintage_or_comment].squish
+      params[:q][:name_or_area_or_vintage_or_comment_cont_any] = squished_keywords.split(" ")
+    end
+    @q = current_user.wines.ransack(params[:q])
   end
 end

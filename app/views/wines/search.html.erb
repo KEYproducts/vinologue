@@ -3,9 +3,14 @@
 <%= render "shared/search_bar" %>
 
 <div class="wine-items container">
-  <h3 class="wine-items-headline">検索結果</h3>
+  <div class="wine-items-headline">
+    <h3>検索結果</h3>
+    <p class="link-root">▶▶▶ <%= link_to 'マイページへ戻る', root_path %></P>
+  </div>
+
   <div class="row">
-  <% @wines.each do |wine| %>
-    <%= render partial: "shared/index", locals: { wine: wine } %>
-  <% end %>
+    <% @wines.each do |wine| %>
+      <%= render partial: "shared/index", locals: { wine: wine } %>
+    <% end %>
+  </div>
 </div>

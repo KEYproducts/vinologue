@@ -90,7 +90,7 @@ body {
 // ワイン登録機能
 /******************************************************/
 
-/*ナビゲーションバー*/
+/*部分テンプレート ナビゲーションバー*/
 .navbar {
   background-color: #331215; 
 }
@@ -99,11 +99,31 @@ body {
   font-weight: 600;
 }
 
-/*マイページ*/
+/*部分テンプレート 検索バー*/
 .search-bars {
   margin-top: 40px;
 }
 
+.search-bar-btn {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #c6c6cc;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background-color: #331215;
+  color: white;
+  opacity: 0.5;
+}
+
+.search-bar-btn-text {
+  padding-left: 10px;
+  font-size: large;
+}
+
+/*マイページ*/
 .wine-items {
   margin-top: 40px;
 }
@@ -111,8 +131,10 @@ body {
 .wine-items-headline {
   color:#331215;
   margin-bottom: 20px;
+  display: flex;
 }
 
+/*部分テンプレート 一覧表示*/
 .wine-digest {
   display: flex;
   flex-direction: column;
@@ -222,5 +244,13 @@ body {
 
 .winenote-edit {
   margin: 30px auto;
+}
 
+/*検索結果表示ページ*/
+.link-root {
+  padding: 5px 0 0 40px;
+}
+
+.link-root a {
+  color:#331215;
 }

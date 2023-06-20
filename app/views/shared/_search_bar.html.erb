@@ -1,0 +1,43 @@
+<div class="search-bars container">
+  <%= search_form_for @q, url: search_wines_path, html: {id: "detailed-search-form"} do |f| %>
+    <div class="row">
+      <div class="search-bar-holder d-flex col-sm-6 col-lg-3 mb-2">
+        <div class="input-group">
+          
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="search-bar-holder row">
+      <div class="search-bar-inputs col-md-10">
+        <div class="row">
+          <div class="search-bar-input-short col-md-6 col-lg-3 mb-2">
+            <%= f.collection_select(:type_id_eq, Type.all, :id, :name, { include_blank: "ワインの種類を選択" }, {class:"form-select" }) %>
+          </div>
+          <div class="search-bar-input-short col-md-6 col-lg-3 mb-2">
+            <%= f.collection_select(:country_id_eq, Country.all, :id, :name, { include_blank: "産地国を選択" }, {class:"form-select" }) %>
+          </div>
+          <div class="search-bar-input-short col-md-6 col-lg-3 mb-2">
+            <%= f.collection_select(:variety_id_eq, Variety.all, :id, :name, { include_blank: "ブドウ品種を選択" }, {class:"form-select" }) %>
+          </div>
+          <div class="search-bar-input-short col-md-6 col-lg-3 mb-2">
+            <%= f.collection_select(:star_id_eq, Star.all, :id, :name, { include_blank: "★の数を選択" }, {class:"form-select" }) %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="search-bar-input-long col mb-2">
+            <%= f.search_field :name_or_area_or_vintage_or_comment, class:"form-control", placeholder: 'ワイン名、産地（地域）、ヴィンテージ、コメントから検索できます', value: params[:q]&.dig(:name_or_area_or_vintage_or_comment) %>
+          </div>
+        </div>
+      </div>
+      <div class="search-bar-btn-holder col-md-2 mb-2">
+        <%= button_tag type: 'submit', class:"search-bar-btn" do %>
+          <span><i class="fas fa-search fa-lg"></i></span><div class="search-bar-btn-text">検索</div>
+        <% end %>
+      </div>
+
+    </div>
+  <% end %>
+
+  

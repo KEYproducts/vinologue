@@ -1,5 +1,6 @@
 class WinesController < ApplicationController
   before_action :set_wine, only: [:show, :edit, :update, :destroy]
+  before_action :set_q, only: [:user_wines, :search]
 
   def user_wines
     @user = User.find(current_user.id)
@@ -38,6 +39,10 @@ class WinesController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @results = @q.result
+  end
+
   private
   def wine_params
     params.require(:wine).permit(:name, :type_id, :country_id, :area, :variety_id, :country_id, :vintage, :star_id,  :comment, {images: []}
@@ -46,5 +51,9 @@ class WinesController < ApplicationController
 
   def set_wine
     @wine = Wine.find(params[:id])
+  end
+
+  def set_q
+    @q = Wine.ransack(params[:q])
   end
 end

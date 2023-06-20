@@ -7,7 +7,11 @@ Rails.application.routes.draw do
     post 'profiles', to: 'users/registrations#create_profile'
   end
 
-  resources :wines, only: [:new, :create, :show, :edit, :update, :destroy]
+  resources :wines, only: [:new, :create, :show, :edit, :update, :destroy] do
+    collection do
+      get 'search'
+    end
+  end
 
   resources :users, only: :show do
     get 'wines', to: 'wines#user_wines'

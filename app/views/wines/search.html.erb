@@ -1,0 +1,11 @@
+<%= render "shared/header" %>
+
+<%= render "shared/search_bar" %>
+
+<div class="wine-items container">
+  <h3 class="wine-items-headline">検索結果</h3>
+  <div class="row">
+  <% @wines.each do |wine| %>
+    <%= render partial: "shared/index", locals: { wine: wine } %>
+  <% end %>
+</div>

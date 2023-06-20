@@ -1,77 +1,27 @@
 <%= render "shared/header" %>
 
-<div class="search-bars container">
-  <div class="row">
-    <div class="search-bar-holder d-flex col-sm-6 col-lg-3 mb-2">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="キーワードを入力">
-        <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i> 検索</button>
-      </div>
-    </div>
-    <div class="search-bar-holder d-flex col-sm-6 col-lg-3 mb-2">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="キーワードを入力">
-        <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i> 検索</button>
-      </div>
-    </div>
-    <div class="search-bar-holder d-flex col-sm-6 col-lg-3 mb-2">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="キーワードを入力">
-        <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i> 検索</button>
-      </div>
-    </div>
-    <div class="search-bar-holder d-flex col-sm-6 col-lg-3 mb-2">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="キーワードを入力">
-        <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i> 検索</button>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="search-bar-holder">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="キーワードを入力">
-        <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i> 検索</button>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render "shared/search_bar" %>
 
 <div class="wine-items container">
   <h3 class="wine-items-headline"><%= current_user.nickname %> さんのワインノート</h3>
   <div class="row">
-    <% @wines.each do |wine| %>
-    <div class="col-sm-4 col-lg-2 mb-5">
-      <%= link_to wine_path(wine) do %>
-        <div class="card bg-light text-white">
-          <% if wine.images[0].nil? %>
-            <%= image_tag "wine_sample.jpg", class:"card-img", alt:"..." %>
-          <% else %>
-            <%= image_tag wine.images[0], class:"card-img", alt:"..." %>
-          <% end %>
-          <div class="wine-digest card-img-overlay">
-            <h5 class="card-title"><%= wine.name %></h5>
-            <p class="wine-star card-text"><%= wine.star.name %></p>
-            <p class="card-text"><%= l wine.created_at %></p>
-          </div>
-        </div>
-      <% end %>
-    </div>
-    <% end %>
-    <div class="col-sm-4 col-lg-2 mb-5">
-      <div class="card bg-light text-white">
-        <%= image_tag "wine_sample.jpg", class:"card-img", alt:"..." %>
-        <div class="wine-digest card-img-overlay">
-          <h5 class="card-title">見本のカード</h5>
-          <p class="wine-star-mihon card-text">★★★★★</p>
-          <p class="card-text">2023-06-22</p>
-        </div>
+  <% @wines.each do |wine| %>
+    <%= render partial: "shared/index", locals: { wine: wine } %>
+  <% end %>
+</div>
+  
+<%# 最後に消す %>
+  <div class="col-sm-4 col-lg-2 mb-5">
+    <div class="card bg-light text-white">
+      <%= image_tag "wine_sample.jpg", class:"card-img", alt:"..." %>
+      <div class="wine-digest card-img-overlay">
+        <h5 class="card-title">見本のカード</h5>
+        <p class="wine-star-mihon card-text">★★★★★</p>
+        <p class="card-text">2023-06-22</p>
       </div>
     </div>
-
-
-
   </div>
+<%# 最後に消す %>
 </div>
 
 <%= link_to(new_wine_path, class: 'wine-new-btn') do %>

@@ -11,20 +11,6 @@
       <%= render partial: "shared/index", locals: { wine: wine } %>
     <% end %>
   </div>
-
-  
-<%# 最後に消す %>
-  <div class="col-sm-4 col-lg-2 mb-5">
-    <div class="card bg-light text-white">
-      <%= image_tag "wine_sample.jpg", class:"card-img", alt:"..." %>
-      <div class="wine-digest card-img-overlay">
-        <h5 class="card-title">見本のカード</h5>
-        <p class="wine-star-mihon card-text">★★★★★</p>
-        <p class="card-text">2023-06-22</p>
-      </div>
-    </div>
-  </div>
-<%# 最後に消す %>
 </div>
 
 <%= link_to(new_wine_path, class: 'wine-new-btn') do %>

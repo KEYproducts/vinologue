@@ -4,7 +4,7 @@
   <div class="winenote-show col-sm-10">
     <div class="row">
       <div class="container-winenote-show-photos col-sm-12 col-lg-5 d-flex justify-content-evenly">
-        <div class="winenote-show-photo col-6 img-hidden">
+        <div class="winenote-show-photo col-6">
           <% if @wine.images[0].nil? %>
             <%= image_tag "no_image.png", class:"img-thumbnail", alt:"..." %>
           <% else %>

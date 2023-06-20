@@ -135,6 +135,12 @@ body {
 }
 
 /*部分テンプレート 一覧表示*/
+.card-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
 .wine-digest {
   display: flex;
   flex-direction: column;

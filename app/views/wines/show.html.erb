@@ -65,10 +65,19 @@
       <%= link_to "ワインノートを編集する", edit_wine_path(@wine), class:"btn btn-outline-secondary"%>
     </div>
     <div class="d-grid col-4">
-      <%= link_to "ワインノートを削除する", wine_path(@wine), method: :delete, class:"btn btn-outline-secondary"%>
+      <button type="button" class="btn btn-outline-secondary" id="delete-wine-btn">ワインノートを削除する</button>
     </div>
   </div>
 </div>
 
-
-
+<%# 削除確認用モーダル %>
+<div id="confirmation-modal" class="modal">
+  <div class="modal-content">
+    <p>ワイン情報を削除しますか？</p>
+    <p>※テイスティングシートも同時に削除されます</p>
+    <div class="modal-buttons">
+      <%= link_to 'はい', wine_path(@wine), method: :delete, class:"btn btn-outline-secondary col-sm-6 col-md-2", id: "confirm-yes" %>
+      <button type="button" class="btn btn-outline-secondary col-sm-6 col-md-2" id="confirm-no">いいえ</button>
+    </div>
+  </div>
+</div>

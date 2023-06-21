@@ -1,10 +1,13 @@
+<%# ヘッダーを表示 %>
 <%= render "shared/header" %>
 
+<%# ワイン情報詳細を表示 %>
 <div class="container">
   <div class="winenote-show col-sm-10">
     <div class="row">
+    
       <div class="container-winenote-show-photos col-sm-12 col-lg-5 d-flex justify-content-evenly">
-        <div class="winenote-show-photo col-6 img-hidden">
+        <div class="winenote-show-photo col-6">
           <% if @wine.images[0].nil? %>
             <%= image_tag "no_image.png", class:"img-thumbnail", alt:"..." %>
           <% else %>
@@ -50,17 +53,31 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </div>
 
+<%# 編集・削除ボタンを表示 %>
 <div class="container">
   <div class="winenote-edit col-sm-10 d-flex justify-content-evenly">
     <div class="d-grid col-4">
       <%= link_to "ワインノートを編集する", edit_wine_path(@wine), class:"btn btn-outline-secondary"%>
     </div>
     <div class="d-grid col-4">
-      <%= link_to "ワインノートを削除する", wine_path(@wine), method: :delete, class:"btn btn-outline-secondary"%>
+      <button type="button" class="btn btn-outline-secondary" id="delete-wine-btn">ワインノートを削除する</button>
+    </div>
+  </div>
+</div>
+
+<%# 削除確認用モーダル %>
+<div id="confirmation-modal" class="modal">
+  <div class="modal-content">
+    <p>ワイン情報を削除しますか？</p>
+    <p>※テイスティングシートも同時に削除されます</p>
+    <div class="modal-buttons">
+      <%= link_to 'はい', wine_path(@wine), method: :delete, class:"btn btn-outline-secondary col-sm-6 col-md-2", id: "confirm-yes" %>
+      <button type="button" class="btn btn-outline-secondary col-sm-6 col-md-2" id="confirm-no">いいえ</button>
     </div>
   </div>
 </div>

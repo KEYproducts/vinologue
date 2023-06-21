@@ -1,5 +1,7 @@
+<%# ヘッダーを表示 %>
 <%= render "shared/header" %>
 
+<%# ワイン情報登録フォームを表示 %>
 <div class="container-fluid">
   <div class="winenote-new col-sm-10 col-lg-8">
     <h2 class="winenote-new-title">Let's make your wine note</h2>
@@ -9,6 +11,7 @@
 
           <%= render 'shared/error_messages', model: f.object %>
           
+          <p>※がついている項目は入力必須です</p>
           <div class="input-filed-winenote row">
             <label for="wine_images" class="col-sm-2 col-form-label">ワインの写真</label>
             <div class="col-sm-5">
@@ -20,21 +23,21 @@
           </div>
 
           <div class="input-filed-winenote row">
-            <label for="wine-name" class="col-sm-2 col-form-label">ワイン名</label>
+            <label for="wine-name" class="col-sm-2 col-form-label">ワイン名 ※</label>
             <div class="col-sm-10">
               <%= f.text_field :name, class:"form-control", id:"wine-name", placeholder:"例）オーパス・ワン" %>
             </div>
           </div>
 
           <div class="input-filed-winenote row">
-            <label for="wine-type" class="col-sm-2 col-form-label">ワインの種別</label>
+            <label for="wine-type" class="col-sm-2 col-form-label">ワインの種別 ※</label>
             <div class="col-sm-5">
               <%= f.collection_select(:type_id, Type.all, :id, :name, { include_blank: "---" }, {class:"form-select", id:"wine-type" }) %>
             </div>
           </div>
 
           <div class="input-filed-winenote row">
-            <label for="wine-country" class="col-sm-2 col-form-label">産地（国）</label>
+            <label for="wine-country" class="col-sm-2 col-form-label">産地（国） ※</label>
             <div class="col-sm-5">
               <%= f.collection_select(:country_id, Country.all, :id, :name, { include_blank: "---" }, {class:"form-select", id:"wine-country" }) %>
             </div>
@@ -62,7 +65,7 @@
           </div>
 
           <div class="input-filed-winenote row">
-            <label for="wine-star" class="col-sm-2 col-form-label">評価</label>
+            <label for="wine-star" class="col-sm-2 col-form-label">評価 ※</label>
             <div class="col-sm-5">
               <%= f.collection_select(:star_id, Star.all, :id, :name, { include_blank: "---" }, {class:"form-select", id:"wine-star" }) %>
             </div>

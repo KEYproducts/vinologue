@@ -1,8 +1,11 @@
+<%# ヘッダーを表示 %>
 <%= render "shared/header" %>
 
+<%# ワイン情報詳細を表示 %>
 <div class="container">
   <div class="winenote-show col-sm-10">
     <div class="row">
+    
       <div class="container-winenote-show-photos col-sm-12 col-lg-5 d-flex justify-content-evenly">
         <div class="winenote-show-photo col-6">
           <% if @wine.images[0].nil? %>
@@ -50,10 +53,12 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </div>
 
+<%# 編集・削除ボタンを表示 %>
 <div class="container">
   <div class="winenote-edit col-sm-10 d-flex justify-content-evenly">
     <div class="d-grid col-4">
@@ -64,3 +69,6 @@
     </div>
   </div>
 </div>
+
+
+

@@ -1,7 +1,10 @@
+<%# ヘッダーを表示 %>
 <%= render "shared/header" %>
 
+<%# 検索バーを表示 %>
 <%= render "shared/search_bar" %>
 
+<%# ワイン一覧を表示 %>
 <div class="wine-items container">
   <div class="wine-items-headline">
     <h3><%= current_user.nickname %> さんのワインノート</h3>
@@ -13,6 +16,7 @@
   </div>
 </div>
 
+<%# ワイン情報登録へのリンク %>
 <%= link_to(new_wine_path, class: 'wine-new-btn') do %>
   <span class='wine-new-btn-text'>ワインを登録</span>
   <%= image_tag 'icon_glass.png' , size: '185x50' ,class: "wine-new-btn-icon" %>

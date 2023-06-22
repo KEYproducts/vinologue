@@ -5,6 +5,9 @@
 <div class="container-fluid">
   <div class="input-form col-sm-10 col-lg-8">
     <h2 class="input-form-title">Edit your wine note</h2>
+    <div class="link-holder-right">
+      ▶▶▶ <%= link_to 'ワインノートへ戻る', wine_path(@wine) %>
+    </div>
     <div class="container-input-form-main">
       <div class="input-form-main col-10">
         <%= form_with model: @wine, local: true do |f| %>

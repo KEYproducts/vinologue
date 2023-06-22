@@ -4,6 +4,10 @@
 <%# ワイン情報詳細を表示 %>
 <div class="container">
   <div class="winenote-show col-sm-10">
+    <div class="link-tasting-sheet-new">
+      ▶▶▶ <%= link_to 'このワインのテイスティングシートを作成する', new_wine_tasting_sheet_path(@wine) %>
+    </div>
+
     <div class="row">
     
       <div class="container-winenote-show-photos col-sm-12 col-lg-5 d-flex justify-content-evenly">

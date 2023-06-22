@@ -5,7 +5,7 @@
 <div class="container">
   <div class="winenote-show col-sm-10">
 
-    <% if flash[:notice] %>
+    <% if flash[:notice] == "ワインノートを登録しました。続けてテイスティングシートも作成してみましょう！" %>
       <div class="alert alert-success alert-dismissible fade show" role="alert">
         <strong><%= flash[:notice] %></strong>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

@@ -17,5 +17,8 @@ Rails.application.routes.draw do
     get 'wines', to: 'wines#user_wines'
   end
 
+  resources :tasting_sheets, only: [:new, :create]
+
   root to: 'wines#user_wines'
+
 end

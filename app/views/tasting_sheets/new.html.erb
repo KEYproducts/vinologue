@@ -1,2 +1,117 @@
-<h1>TastingSheets#new</h1>
-<p>Find me in app/views/tasting_sheets/new.html.erb</p>
+<%# ヘッダーを表示 %>
+<%= render "shared/header" %>
+
+<%# テイスティングシート作成フォームを表示 %>
+<div class="container-fluid">
+  <div class="input-form col-sm-10 col-lg-8">
+    <h2 class="wine-name">仮）ワインの名前 's</h2>
+    <h2 class="input-form-title">Tasting Sheet</h2>
+    <div class="container-input-form-main-TS">
+      <div class="input-form-main col-10">
+      
+        <div class="section-tasting-sheet">
+          <h4 class="section-tasting-sheet-title">外観  - Appearance</h4>
+
+          <div class="input-filed-tasting-sheet">
+            <h6 class="tasting-sheet-item">清澄度（ひとつを選択）</h6>
+            <div class="tasting-sheet-cheks">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">澄んだ</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">やや濁った</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                <label class="form-check-label" for="inlineCheckbox3">濁った</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-filed-tasting-sheet">
+            <h6 class="tasting-sheet-item">輝き（ひとつを選択）</h6>
+            <div class="tasting-sheet-cheks">
+            <% ["輝きのある", "落ち着いた", "モヤがかった"].each do |item| %>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1"><%= item %></label>
+              </div>
+            <% end %>
+            </div>
+          </div>
+
+          <div class="input-filed-tasting-sheet">
+            <h6 class="tasting-sheet-item">色調（複数選択可）</h6>
+            <div class="tasting-sheet-cheks">
+            <% ["グリーンがかった", "黄金色がかった", "レモンイエロー", "イエロー", "黄金色", "トパーズ", "オレンジ（グリ）を帯びた", "アンバー" ].each do |item| %>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1"><%= item %></label>
+              </div>
+            <% end %>
+            </div>
+          </div>
+
+          <div class="input-filed-tasting-sheet">
+            <h6 class="tasting-sheet-item">濃淡（ひとつを選択）</h6>
+            <div class="tasting-sheet-cheks">
+            <% ["無色に近い", "淡い", "やや濃い","濃い", "非常に濃い"].each do |item| %>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1"><%= item %></label>
+              </div>
+            <% end %>
+            </div>
+          </div>
+
+          <div class="input-filed-tasting-sheet">
+            <h6 class="tasting-sheet-item">粘性（ひとつを選択）</h6>
+            <div class="tasting-sheet-cheks">
+            <% ["さらっとした", "やや軽い", "やや強い","強い"].each do |item| %>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1"><%= item %></label>
+              </div>
+            <% end %>
+            </div>
+          </div>
+
+          <div class="input-filed-tasting-sheet">
+            <h6 class="tasting-sheet-item">外観の印象（複数選択可）</h6>
+            <div class="tasting-sheet-cheks">
+            <% ["若々しい", "若い状態を抜けた", "軽快な", "成熟度が高い", "濃縮感がある", "やや熟成した", "熟成した", "酸化熟成のニュアンス", "酸化が進んだ " ].each do |item| %>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1"><%= item %></label>
+              </div>
+            <% end %>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="section-tasting-sheet">
+          <h4 class="section-tasting-sheet-title">香り  - Aroma</h4>
+        </div>
+
+        <div class="section-tasting-sheet">
+          <h4 class="section-tasting-sheet-title"> 味わい  - Taste</h4>
+        </div>
+
+        <div class="section-tasting-sheet">
+          <h4 class="section-tasting-sheet-title">総合  - Overall</h4>
+
+          <div class="input-filed-tasting-sheet">
+            <h6 class="tasting-sheet-item">自由記入欄</h6>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

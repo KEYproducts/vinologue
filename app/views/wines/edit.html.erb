@@ -3,10 +3,10 @@
 
 <%# ワイン情報編集フォームを表示 %>
 <div class="container-fluid">
-  <div class="winenote-new col-sm-10 col-lg-8">
-    <h2 class="winenote-new-title">Edit your wine note</h2>
-    <div class="container-winenote-new-main">
-      <div class="winenote-new-main col-10">
+  <div class="input-form col-sm-10 col-lg-8">
+    <h2 class="input-form-title">Edit your wine note</h2>
+    <div class="container-input-form-main">
+      <div class="input-form-main col-10">
         <%= form_with model: @wine, local: true do |f| %>
 
           <%= render 'shared/error_messages', model: f.object %>

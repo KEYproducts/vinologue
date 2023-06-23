@@ -14,7 +14,7 @@ class WinesController < ApplicationController
   def create
     @wine = Wine.new(wine_params)
     if @wine.save
-      flash[:notice] = "ワインノートを登録しました。続けてテイスティングシートも作成してみましょう！"
+      flash[:create] = "ワインノートを登録しました。続けてテイスティングシートも作成してみましょう！"
       redirect_to  wine_path(@wine)
     else
       render :new

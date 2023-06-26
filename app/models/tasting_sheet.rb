@@ -1,0 +1,2 @@
+class TastingSheet < ApplicationRecord
+end

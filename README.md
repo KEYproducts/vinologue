@@ -10,8 +10,6 @@ https://vinologue.onrender.com
 ## テスト用アカウント
 email：email@gmail  /  password：aaa111
 
-※写真の保存先は今後S3へ移行します。
-
 ## 利用方法
 ### ワインの登録
 1. ユーザーの新規登録を行う。
@@ -46,7 +44,7 @@ email：email@gmail  /  password：aaa111
 ## 開発環境
 - フロントエンド HTML, CSS, JavaScript, Bootstrap
 - バックエンド Ruby on Rails
-- インフラ Render, (S3 ※今後対応)
+- インフラ Render, AWS(S3)
 - テスト (Rspec ※今後対応)
 - テキストエディタ VScode
 - タスク管理 Github

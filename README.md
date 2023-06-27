@@ -27,13 +27,30 @@ email：email@gmail  /  password：aaa111
 ## 洗い出した要件
 [要件定義書](https://docs.google.com/spreadsheets/d/1ta_3GaoYquenckBBGd-YntBVzTxk_-qlm5A6bHPTO4g/edit?usp=sharing)
 
-<!-- ## 実装した機能についての画像やGIFおよびその説明 -->
+## 実装した機能についての画像やGIFおよびその説明
+### 一覧表示画面
+ユーザーが登録したワインが一覧で表示される画面（マイページ）
+登録したワインのメイン画像、名前、評価、登録年月日が表示される他、検索窓をページ上部に設けています。
+[![Image from Gyazo](https://i.gyazo.com/710d2763e0950d96f00b62a9bea6b0be.jpg)](https://gyazo.com/710d2763e0950d96f00b62a9bea6b0be)
+### 詳細表示画面
+登録したワインの詳細が確認できる画面
+登録時に入力した全情報、編集や削除へのリンクが表示されます。また、ここにテイスティングシート作成機能へのリンクを設ける予定です。
+[![Image from Gyazo](https://i.gyazo.com/19457943402889f80272ce0f6d2e1dfa.png)](https://gyazo.com/19457943402889f80272ce0f6d2e1dfa)
+### 検索機能
+プルダウンから選べるものと自由記入の5つの検索窓を設けました。
+画像は「産地国：日本」「★の数：★★★★」で検索した結果を表示しています。
+[![Image from Gyazo](https://i.gyazo.com/be9284d1043bdd5d362e5ef1ff5af561.png)](https://gyazo.com/be9284d1043bdd5d362e5ef1ff5af561)
+
+その他、ユーザー登録・ログイン機能、ワイン情報登録機能、ワイン情報編集・削除機能を実装済みです。
 
 ## 実装予定の機能
 - テイスティングシート作成機能 ☜現在作業中
+
 - テイスティングシート詳細表示・編集・削除機能
 - 写真添付時の画像プレビュー機能・画像削除機能
 - ユーザー情報編集機能
+
+※作業状況は[GitHubのProject](https://github.com/users/KEYproducts/projects/2)にて確認可能です。
 
 ## データベース設計
 [![Image from Gyazo](https://i.gyazo.com/94c0fcefe6f577e41ae86edecdf5e0fc.png)](https://gyazo.com/94c0fcefe6f577e41ae86edecdf5e0fc)
@@ -56,5 +73,5 @@ email：email@gmail  /  password：aaa111
 - ワインの写真添付欄は「表ラベルの写真」と「裏ラベルの写真」のような使い方ができるよう2枚まで登録可能にしました。また、写真を後付けできるよう、写真なしでの登録も可能とし、写真無しの場合はダミー画像が表示される仕様としました。
 - テイスティングシート作成機能は、詳細コメント欄以外は全てチェックボックスを使用することで、手軽に記録の作成ができるようにしました。
 - 検索欄は複数条件での検索が可能になるように、ransackというgemを使用して実装しました。
-- スマホやタブレットでの使用を想定してbootstrapを利用したレスポンシブデザインにしました。
+- 本アプリの利用シーンでは、スマホやタブレットでの使用がメインになると考え、bootstrapを利用したレスポンシブデザインにしました。
 

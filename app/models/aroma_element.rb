@@ -1,0 +1,2 @@
+class AromaElement < ApplicationRecord
+end

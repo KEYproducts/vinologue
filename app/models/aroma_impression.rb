@@ -1,0 +1,2 @@
+class AromaImpression < ApplicationRecord
+end

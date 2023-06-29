@@ -10,6 +10,7 @@ class CreateTastingSheets < ActiveRecord::Migration[6.0]
       t.integer    :bitterness_id
       t.integer    :alcohol_id
       t.integer    :finish_id
+      t.integer    :evaluation_id      
       t.integer    :serving_temperature_id
       t.integer    :glass_id
       t.text       :detail

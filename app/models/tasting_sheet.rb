@@ -7,7 +7,6 @@ class TastingSheet < ApplicationRecord
   has_and_belongs_to_many :aroma_impressions
   has_and_belongs_to_many :acidities
   has_and_belongs_to_many :balances
-  has_and_belongs_to_many :evaluations
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :clarity
@@ -19,6 +18,7 @@ class TastingSheet < ApplicationRecord
   belongs_to :bitterness
   belongs_to :alcohol
   belongs_to :finish
+  belongs_to :evaluation
   belongs_to :serving_temperature
   belongs_to :glass
 end

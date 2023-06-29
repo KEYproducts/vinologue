@@ -34,10 +34,5 @@ class CreateTastingSheetJoinTables < ActiveRecord::Migration[6.0]
       t.references :tasting_sheet, null: false, foreign_key: true
       t.references :balance, null: false, foreign_key: true
     end
-
-    create_table :evaluations_tasting_sheets, id: false do |t|
-      t.references :tasting_sheet, null: false, foreign_key: true
-      t.references :evaluation, null: false, foreign_key: true
-    end
   end
 end

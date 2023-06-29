@@ -27,9 +27,5 @@ class CreateTastingSheetOptionTables < ActiveRecord::Migration[6.0]
     create_table :balances do |t|
       t.string :option
     end
-
-    create_table :evaluations do |t|
-      t.string :option
-    end
   end
 end

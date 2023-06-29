@@ -8,6 +8,10 @@ class CreateTastingSheetOptionTables < ActiveRecord::Migration[6.0]
       t.string :option
     end
 
+    create_table :first_impressions do |t|
+      t.string :option
+    end
+
     create_table :aroma_elements do |t|
       t.string :option
     end

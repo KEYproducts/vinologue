@@ -10,6 +10,11 @@ class CreateTastingSheetJoinTables < ActiveRecord::Migration[6.0]
       t.references :appearance, null: false, foreign_key: true
     end
 
+    create_table :first_impressions_tasting_sheets, id: false do |t|
+      t.references :tasting_sheet, null: false, foreign_key: true
+      t.references :first_impression, null: false, foreign_key: true
+    end
+
     create_table :aroma_elements_tasting_sheets, id: false do |t|
       t.references :tasting_sheet, null: false, foreign_key: true
       t.references :aroma_element, null: false, foreign_key: true

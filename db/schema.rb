@@ -99,6 +99,17 @@ ActiveRecord::Schema.define(version: 2023_06_29_062711) do
     t.index ["tasting_sheet_id"], name: "index_evaluations_tasting_sheets_on_tasting_sheet_id"
   end
 
+  create_table "first_impressions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "option"
+  end
+
+  create_table "first_impressions_tasting_sheets", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "tasting_sheet_id", null: false
+    t.bigint "first_impression_id", null: false
+    t.index ["first_impression_id"], name: "index_first_impressions_tasting_sheets_on_first_impression_id"
+    t.index ["tasting_sheet_id"], name: "index_first_impressions_tasting_sheets_on_tasting_sheet_id"
+  end
+
   create_table "hues", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "option"
   end
@@ -125,7 +136,6 @@ ActiveRecord::Schema.define(version: 2023_06_29_062711) do
     t.integer "brilliance_id"
     t.integer "depth_id"
     t.integer "viscosity_id"
-    t.integer "first_impression_id"
     t.integer "attack_id"
     t.integer "sweetness_id"
     t.integer "bitterness_id"
@@ -181,6 +191,8 @@ ActiveRecord::Schema.define(version: 2023_06_29_062711) do
   add_foreign_key "balances_tasting_sheets", "tasting_sheets"
   add_foreign_key "evaluations_tasting_sheets", "evaluations"
   add_foreign_key "evaluations_tasting_sheets", "tasting_sheets"
+  add_foreign_key "first_impressions_tasting_sheets", "first_impressions"
+  add_foreign_key "first_impressions_tasting_sheets", "tasting_sheets"
   add_foreign_key "hues_tasting_sheets", "hues"
   add_foreign_key "hues_tasting_sheets", "tasting_sheets"
   add_foreign_key "profiles", "users"

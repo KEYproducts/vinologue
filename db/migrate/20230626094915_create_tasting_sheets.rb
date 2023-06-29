@@ -5,7 +5,6 @@ class CreateTastingSheets < ActiveRecord::Migration[6.0]
       t.integer    :brilliance_id
       t.integer    :depth_id
       t.integer    :viscosity_id
-      t.integer    :first_impression_id
       t.integer    :attack_id
       t.integer    :sweetness_id
       t.integer    :bitterness_id

@@ -154,6 +154,7 @@ body {
 /*マイページ  ワイン登録ボタン*/
 .wine-new-btn {
   width: 120px;
+  height: 120px;
   background: #331215;
   text-align: center;
   border-radius: 4%;
@@ -172,22 +173,33 @@ body {
 }
 
 .wine-new-btn-icon {
-  width: 60%;
+  width: 70%;
+  height: 60%;
 }
 
+.wine-new-btn:hover {
+  width: 130px;
+  height: 130px;
+  bottom: 40px;
+  right: 40px;
+  font-size: 20px;
+  box-shadow: 10px 10px 5px 0 rgba(51,18,21, 0.25);
+}
+
+
 /*ワイン新規登録ページ*/
-.winenote-new {
-  padding-top: 80px;
+.input-form {
+  padding: 80px 0;
   margin: 0 auto;
 }
 
-.winenote-new-title {
+.input-form-title {
   margin-bottom: 20px;
   width: 100%;
   text-align: center;
 }
 
-.container-winenote-new-main {
+.container-input-form-main {
   width: 100%;
   background-color: #f8f8ff;
   border: 1px solid #c6c6cc;
@@ -195,7 +207,7 @@ body {
   padding: 60px 20px;
 }
 
-.winenote-new-main {
+.input-form-main {
   margin: 0 auto;
 }
 
@@ -216,6 +228,18 @@ body {
 .winenote-show {
   padding-top: 80px;
   margin: 0 auto;
+}
+
+.link-holder-right {
+  width: 100%;
+  text-align: right;
+  margin-bottom: 10px;
+  padding-right: 10px;
+  color:#331215
+}
+
+.link-holder-right a {
+  color:#331215
 }
 
 .container-winenote-show-photos {
@@ -283,4 +307,33 @@ body {
 
 .link-root a {
   color:#331215;
+}
+
+/*テイスティングシート作成ページ*/
+.wine-name {
+  width: 100%;
+  text-align: center;
+}
+.container-input-form-main-TS {
+  width: 100%;
+  background-color: #f8f8ff;
+  border: 1px solid #c6c6cc;
+  border-radius: 5px;
+  padding: 60px 20px;
+}
+
+.section-tasting-sheet {
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.section-tasting-sheet-title {
+  width: 100%;
+  border-bottom: 1px solid #c6c6cc;
+  padding-bottom: 10px;
+}
+
+.input-filed-tasting-sheet {
+  width: 100%;
+  padding: 10px 10px 0 10px;
 }

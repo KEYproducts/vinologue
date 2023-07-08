@@ -1,7 +1,31 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+["グリーンがかった", "黄金色がかった", "レモンイエロー", "イエロー", "黄金色", "トパーズ", "オレンジ（グリ）を帯びた", "アンバー" ].each do |item|
+  Hue.create(option: item)
+end
+
+["若々しい", "若い状態を抜けた", "軽快な", "成熟度が高い", "濃縮感がある", "やや熟成した", "熟成した", "酸化熟成のニュアンス", "酸化が進んだ " ].each do |item|
+  Appearance.create(option: item)
+end
+
+["閉じている", "控えめ", "開いている", "力強い", "フレッシュな", "チャーミングな", "華やかな", "濃縮感がある", "深みのある", "複雑な" ].each do |item|
+  FirstImpression.create(option: item)
+end
+
+["若々しい", "嫌気的な", "発展的な", "熟成感が現れている", "酸化熟成の段階", "酸化した", "第1アロマが強い", "第2アロマが強い", "ニュートラル",
+  "木樽からのニュアンス", "成熟度が高い", "複雑性のある" ].each do |item|
+  AromaImpression.create(option: item)
+end
+
+["シャープな", "爽やかな", "なめらかな", "まるみのある", "キメ細かい", "やさしい", "しっかりとした", "ストレートな", "力強い"].each do |item|
+  Acidity.create(option: item)
+end
+
+["スムースな", "コンパクトな", "スリムな", "ドライな", "ジューシーな", "豊潤な", "厚みのある", "まろやかな", "ふくよかな", "ねっとりした" ].each do |item|
+  Balance.create(option: item)
+end
+
+["柑橘類", "青リンゴ", "リンゴ", "洋梨", "マスカット", "花梨", "パッションフルーツ", "白桃", "アプリコット", "パイナップル", "ライチ", "バナナ", "オレンジ",
+  "マンゴー", "スイカズラ", "アカシア", "白バラ", "キンモクセイ", "菩提樹", "ミント", "アニス", "ヴェルヴェーヌ", "草のような", "タイム", "フレッシュアーモンド",
+  "ヘーゼルナッツ", "石灰", "火打石", "貝殻", "鉱物", "海の香り", "トースト", "ヴァニラ", "煙、薫製", "シナモン", "白胡椒", "コリアンダー", "丁字",
+  "香木", "ジンジャーブレッド", "硫黄", "ペトロール（ケロセン）", "パン・ド・ミ", "乳製品", "フェノール", "麝香", "花の蜜", "蜂蜜", "蜜蝋" ].each do |item|
+  AromaElement.create(option: item)
+end

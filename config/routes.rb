@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    resources :tasting_sheets, only: [:new, :create]
   end
 
   resources :users, only: :show do
@@ -18,4 +19,5 @@ Rails.application.routes.draw do
   end
 
   root to: 'wines#user_wines'
+
 end

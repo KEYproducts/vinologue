@@ -1,6 +1,6 @@
 class Wine < ApplicationRecord
   belongs_to :user
-  has_one :tasting_sheet
+  has_one :tasting_sheet, dependent: :destroy
   has_many_attached :images
 
   extend ActiveHash::Associations::ActiveRecordExtensions

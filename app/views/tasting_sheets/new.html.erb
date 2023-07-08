@@ -29,7 +29,7 @@
               <div class="tasting-sheet-cheks">
                 <%= f.collection_check_boxes :brilliance_id, Brilliance.all, :id, :option do |b| %>
                   <div class="form-check form-check-inline">
-                    <%= b.label(class: "form-check-label") { b.check_box(class: "form-check-input") + b.text } %>
+                    <%= b.label(class: "form-check-label") { b.check_box(class: "form-check-input brilliance-input") + b.text } %>
                   </div>
                 <% end %>
               </div>
@@ -51,7 +51,7 @@
               <div class="tasting-sheet-cheks">
                 <%= f.collection_check_boxes :depth_id, Depth.all, :id, :option do |b| %>
                   <div class="form-check form-check-inline">
-                    <%= b.label(class: "form-check-label") { b.check_box(class: "form-check-input") + b.text } %>
+                    <%= b.label(class: "form-check-label") { b.check_box(class: "form-check-input depth-input") + b.text } %>
                   </div>
                 <% end %>
               </div>
@@ -62,7 +62,7 @@
               <div class="tasting-sheet-cheks">
                 <%= f.collection_check_boxes :viscosity_id, Viscosity.all, :id, :option do |b| %>
                   <div class="form-check form-check-inline">
-                    <%= b.label(class: "form-check-label") { b.check_box(class: "form-check-input") + b.text } %>
+                    <%= b.label(class: "form-check-label") { b.check_box(class: "form-check-input viscosity-input") + b.text } %>
                   </div>
                 <% end %>
               </div>
@@ -127,7 +127,7 @@
               <div class="tasting-sheet-cheks">
                 <%= f.collection_check_boxes :attack_id, Attack.all, :id, :option do |b| %>
                   <div class="form-check form-check-inline">
-                    <%= b.label(class: "form-check-label") { b.check_box(class: "form-check-input") + b.text } %>
+                    <%= b.label(class: "form-check-label") { b.check_box(class: "form-check-input attack-input") + b.text } %>
                   </div>
                 <% end %>
               </div>
@@ -138,7 +138,7 @@
               <div class="tasting-sheet-cheks">
                 <%= f.collection_check_boxes :sweetness_id, Sweetness.all, :id, :option do |b| %>
                   <div class="form-check form-check-inline">
-                    <%= b.label(class: "form-check-label") { b.check_box(class: "form-check-input") + b.text } %>
+                    <%= b.label(class: "form-check-label") { b.check_box(class: "form-check-input sweetness-input") + b.text } %>
                   </div>
                 <% end %>
               </div>
@@ -160,7 +160,7 @@
               <div class="tasting-sheet-cheks">
                 <%= f.collection_check_boxes :bitterness_id, Bitterness.all, :id, :option do |b| %>
                   <div class="form-check form-check-inline">
-                    <%= b.label(class: "form-check-label") { b.check_box(class: "form-check-input") + b.text } %>
+                    <%= b.label(class: "form-check-label") { b.check_box(class: "form-check-input bitterness-input") + b.text } %>
                   </div>
                 <% end %>
               </div>
@@ -182,7 +182,7 @@
               <div class="tasting-sheet-cheks">
                 <%= f.collection_check_boxes :alcohol_id, Alcohol.all, :id, :option do |b| %>
                   <div class="form-check form-check-inline">
-                    <%= b.label(class: "form-check-label") { b.check_box(class: "form-check-input") + b.text } %>
+                    <%= b.label(class: "form-check-label") { b.check_box(class: "form-check-input alcohol-input") + b.text } %>
                   </div>
                 <% end %>
               </div>
@@ -193,7 +193,7 @@
               <div class="tasting-sheet-cheks">
                 <%= f.collection_check_boxes :finish_id, Finish.all, :id, :option do |b| %>
                   <div class="form-check form-check-inline">
-                    <%= b.label(class: "form-check-label") { b.check_box(class: "form-check-input") + b.text } %>
+                    <%= b.label(class: "form-check-label") { b.check_box(class: "form-check-input finish-input") + b.text } %>
                   </div>
                 <% end %>
               </div>
@@ -207,7 +207,7 @@
               <div class="tasting-sheet-cheks">
                 <%= f.collection_check_boxes :evaluation_id, Evaluation.all, :id, :option do |b| %>
                   <div class="form-check form-check-inline">
-                    <%= b.label(class: "form-check-label") { b.check_box(class: "form-check-input") + b.text } %>
+                    <%= b.label(class: "form-check-label") { b.check_box(class: "form-check-input evaluation-input") + b.text } %>
                   </div>
                 <% end %>
               </div>
@@ -218,7 +218,7 @@
               <div class="tasting-sheet-cheks">
                 <%= f.collection_check_boxes :serving_temperature_id, ServingTemperature.all, :id, :option do |b| %>
                   <div class="form-check form-check-inline">
-                    <%= b.label(class: "form-check-label") { b.check_box(class: "form-check-input") + b.text } %>
+                    <%= b.label(class: "form-check-label") { b.check_box(class: "form-check-input serving_temperature-input") + b.text } %>
                   </div>
                 <% end %>
               </div>
@@ -229,7 +229,7 @@
               <div class="tasting-sheet-cheks">
                 <%= f.collection_check_boxes :glass_id, Glass.all, :id, :option do |b| %>
                   <div class="form-check form-check-inline">
-                    <%= b.label(class: "form-check-label") { b.check_box(class: "form-check-input") + b.text } %>
+                    <%= b.label(class: "form-check-label") { b.check_box(class: "form-check-input glass-input") + b.text } %>
                   </div>
                 <% end %>
               </div>

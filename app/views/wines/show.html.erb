@@ -12,9 +12,11 @@
       </div>
     <% end %>
 
-    <div class="link-holder-right">
-      ▶▶▶ <%= link_to 'このワインのテイスティングシートを作成する', new_wine_tasting_sheet_path(@wine) %>
-    </div>
+    <% if @wine.tasting_sheet.nil? %>
+      <div class="link-holder-right">
+        ▶▶▶ <%= link_to 'このワインのテイスティングシートを作成する', new_wine_tasting_sheet_path(@wine) %>
+      </div>
+    <% end %>
 
     <div class="row">
     

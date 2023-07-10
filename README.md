@@ -45,7 +45,7 @@ email：email@gmail  /  password：aaa111
 
 ### テイスティングシート作成機能
 チェックボックスから該当する項目にチェックを入れていくことで、手軽にテイスティングの詳細な記録を残すことができます。
-
+[![Image from Gyazo](https://i.gyazo.com/5c00fee3b090bfa3fdc55f88b3c5bdfc.png)](https://gyazo.com/5c00fee3b090bfa3fdc55f88b3c5bdfc)
 
 その他、ユーザー登録・ログイン機能、ワイン情報登録機能、ワイン情報編集・削除機能を実装済みです。
 
@@ -58,7 +58,7 @@ email：email@gmail  /  password：aaa111
 ※作業状況は[GitHubのProject](https://github.com/users/KEYproducts/projects/2)にて確認可能です。
 
 ## データベース設計
-[![Image from Gyazo](https://i.gyazo.com/94c0fcefe6f577e41ae86edecdf5e0fc.png)](https://gyazo.com/94c0fcefe6f577e41ae86edecdf5e0fc)
+[![Image from Gyazo](https://i.gyazo.com/d8563c47c9b107fde421fc761fbb9459.png)](https://gyazo.com/d8563c47c9b107fde421fc761fbb9459)
 
 ## 画面遷移図
 [![Image from Gyazo](https://i.gyazo.com/f5836b9a2d3289ebf24ada254708b5a3.png)](https://gyazo.com/f5836b9a2d3289ebf24ada254708b5a3)

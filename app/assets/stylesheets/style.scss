@@ -300,6 +300,29 @@ body {
   margin-top: 20px;
 }
 
+/* テイスティングシート表示 */
+.tastingsheet-show {
+  padding: 80px 0;
+  margin: 0 auto;
+}
+
+.container-tastingsheet-details {
+  width: 100%;
+  background-color: #f8f8ff;
+  border: 1px solid #c6c6cc;
+  border-radius: 5px;
+  padding: 60px 20px;
+}
+
+.tastingsheet-details {
+  margin: 0 auto;
+}
+
+.tastingsheet-detail {
+  padding-top: 10px;
+}
+
+
 /* 検索結果表示ページ */
 .link-root {
   padding: 5px 0 0 40px;
@@ -314,6 +337,7 @@ body {
   width: 100%;
   text-align: center;
 }
+
 .container-input-form-main-TS {
   width: 100%;
   background-color: #f8f8ff;

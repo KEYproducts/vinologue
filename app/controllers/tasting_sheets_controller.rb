@@ -7,8 +7,8 @@ class TastingSheetsController < ApplicationController
   def create
     @tasting_sheet = TastingSheet.new(tasting_sheet_params)
     if @tasting_sheet.save
-      flash[:create] = "テイスティングシートを登録しました。"
-      redirect_to  wine_path(params[:wine_id])
+      flash[:create] = 'テイスティングシートを登録しました。'
+      redirect_to wine_path(params[:wine_id])
     else
       render :new
     end
@@ -18,10 +18,10 @@ class TastingSheetsController < ApplicationController
 
   def tasting_sheet_params
     params.require(:tasting_sheet).permit(
-      :detail, hue_ids:[], appearance_ids:[], first_impression_ids:[],
-      aroma_element_ids:[], aroma_impression_ids:[], acidity_ids:[], balance_ids:[]
+      :detail, hue_ids: [], appearance_ids: [], first_impression_ids: [],
+               aroma_element_ids: [], aroma_impression_ids: [], acidity_ids: [], balance_ids: []
     ).merge(
-      clarity_id: params[:tasting_sheet][:clarity_id][1], 
+      clarity_id: params[:tasting_sheet][:clarity_id][1],
       brilliance_id: params[:tasting_sheet][:brilliance_id][1],
       depth_id: params[:tasting_sheet][:depth_id][1],
       viscosity_id: params[:tasting_sheet][:viscosity_id][1],
@@ -33,6 +33,7 @@ class TastingSheetsController < ApplicationController
       evaluation_id: params[:tasting_sheet][:evaluation_id][1],
       serving_temperature_id: params[:tasting_sheet][:serving_temperature_id][1],
       glass_id: params[:tasting_sheet][:glass_id][1],
-      wine_id: params[:wine_id])
+      wine_id: params[:wine_id]
+    )
   end
 end

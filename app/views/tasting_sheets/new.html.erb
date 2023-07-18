@@ -10,7 +10,7 @@
       <div class="input-form-main col-10">
         <%= form_with model: [@wine, @tasting_sheet], local: true do |f| %>
 
-<%# 外観の選択肢パート %>
+  <%# 外観の選択肢パート %>
           <div class="section-tasting-sheet">
             <h4 class="section-tasting-sheet-title">外観  - Appearance</h4>           
             <div class="input-filed-tasting-sheet">
@@ -80,7 +80,7 @@
             </div>
           </div>
 
-<%# 香りの選択肢パート %>
+  <%# 香りの選択肢パート %>
           <div class="section-tasting-sheet">
             <h4 class="section-tasting-sheet-title">香り  - Aroma</h4>
 
@@ -118,8 +118,7 @@
             </div>
           </div>
 
-
-<%# 味わいの選択肢パート %>
+  <%# 味わいの選択肢パート %>
           <div class="section-tasting-sheet">
             <h4 class="section-tasting-sheet-title"> 味わい  - Taste</h4>
             <div class="input-filed-tasting-sheet">
@@ -200,6 +199,7 @@
             </div>
           </div>
 
+  <%# 総合評価パート %>
           <div class="section-tasting-sheet">
             <h4 class="section-tasting-sheet-title">総合  - Overall</h4>
             <div class="input-filed-tasting-sheet">
@@ -241,11 +241,10 @@
               </div>
             </div>
           </div>
-
+          
           <div class="btn-holder-wine">
             <%= f.submit "作成", class:"btn-create w-100 btn btn-lg btn btn-secondary" %>
           </div>
-
         <% end %>
       </div>
     </div>

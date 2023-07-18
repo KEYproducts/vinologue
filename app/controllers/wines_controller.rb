@@ -4,7 +4,7 @@ class WinesController < ApplicationController
 
   def user_wines
     @user = User.find(current_user.id)
-    @wines = @user.wines.order("created_at DESC")
+    @wines = @user.wines.order('created_at DESC')
   end
 
   def new
@@ -14,14 +14,15 @@ class WinesController < ApplicationController
   def create
     @wine = Wine.new(wine_params)
     if @wine.save
-      flash[:create] = "ワインノートを登録しました。続けてテイスティングシートも作成してみましょう！"
-      redirect_to  wine_path(@wine)
+      flash[:create] = 'ワインノートを登録しました。続けてテイスティングシートも作成してみましょう！'
+      redirect_to wine_path(@wine)
     else
       render :new
     end
   end
 
   def show
+    @tasting_sheet = @wine.tasting_sheet
   end
 
   def edit
@@ -41,12 +42,14 @@ class WinesController < ApplicationController
   end
 
   def search
-    @wines = @q.result.order("created_at DESC")
+    @wines = @q.result.order('created_at DESC')
   end
 
   private
+
   def wine_params
-    params.require(:wine).permit(:name, :type_id, :country_id, :area, :variety_id, :country_id, :vintage, :star_id,  :comment, {images: []}
+    params.require(:wine).permit(
+      :name, :type_id, :country_id, :area, :variety_id, :country_id, :vintage, :star_id, :comment, { images: [] }
     ).merge(user_id: current_user.id)
   end
 
@@ -57,7 +60,7 @@ class WinesController < ApplicationController
   def set_q
     if params[:q]&.dig(:name_or_area_or_vintage_or_comment)
       squished_keywords = params[:q][:name_or_area_or_vintage_or_comment].squish
-      params[:q][:name_or_area_or_vintage_or_comment_cont_any] = squished_keywords.split(" ")
+      params[:q][:name_or_area_or_vintage_or_comment_cont_any] = squished_keywords.split(' ')
     end
     @q = current_user.wines.ransack(params[:q])
   end

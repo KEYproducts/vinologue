@@ -5,13 +5,14 @@
 <div class="container">
   <div class="winenote-show col-sm-10">
 
+  <%# ワイン情報・テイスティングシート作成完了時のフラッシュメッセージ %>
     <% if flash[:create] %>
       <div class="alert alert-success alert-dismissible fade show" role="alert">
         <strong><%= flash[:create] %></strong>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
     <% end %>
-
+  <%# テイスティングシート作成へのリンク %>
     <% if @wine.tasting_sheet.nil? %>
       <div class="link-holder-right">
         ▶▶▶ <%= link_to 'このワインのテイスティングシートを作成する', new_wine_tasting_sheet_path(@wine) %>
@@ -19,7 +20,7 @@
     <% end %>
 
     <div class="row">
-    
+  <%# ワイン情報：写真パート %>    
       <div class="container-winenote-show-photos col-sm-12 col-lg-5 d-flex justify-content-evenly">
         <div class="winenote-show-photo col-6">
           <% if @wine.images[0].nil? %>
@@ -36,7 +37,7 @@
           <% end %>
         </div>
       </div>
-
+  <%# ワイン情報：登録情報パート %>
       <div class="container-winenote-show-details col-sm-12 col-lg-7 d-flex justify-content-center">
         <div class="winenote-show-details w-100">
           <div class="winenote-show-star"><%= @wine.star.name %></div>
@@ -67,8 +68,8 @@
           </div>
         </div>
       </div>
-
     </div>
+
   </div>
 </div>
 
@@ -95,3 +96,199 @@
     </div>
   </div>
 </div>
+
+<%# テイスティングシートを表示 %>
+<% unless @tasting_sheet.nil? %>
+<div class="container">
+  <div class="tastingsheet-show col-sm-10">
+    <div class="container-tastingsheet-details">
+      <div class="tastingsheet-details col-10">
+        <div class="section-tasting-sheet">
+          <h4 class="section-tasting-sheet-title">外観  - Appearance</h4>
+          <div class="tastingsheet-detail row">
+            <div class="tastingsheet-detail-title col-3">清澄度</div>
+            <div class="tastingsheet-detail-content col-9">
+              <% if @tasting_sheet.clarity.nil? %>
+              <% else %>
+                □ <%= @tasting_sheet.clarity.option %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tastingsheet-detail row">
+            <div class="tastingsheet-detail-title col-3">輝き</div>
+            <div class="tastingsheet-detail-content col-9">
+              <% if @tasting_sheet.brilliance.nil? %>
+              <% else %>
+                □ <%= @tasting_sheet.brilliance.option %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tastingsheet-detail row">
+            <div class="tastingsheet-detail-title col-3">色調</div>
+            <div class="tastingsheet-detail-content col-9">
+              <% @tasting_sheet.hues.each do |item| %>
+                □ <%= item.option %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tastingsheet-detail row">
+            <div class="tastingsheet-detail-title col-3">濃淡</div>
+            <div class="tastingsheet-detail-content col-9">
+              <% if @tasting_sheet.depth.nil? %>
+              <% else %>
+                □ <%= @tasting_sheet.depth.option %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tastingsheet-detail row">
+            <div class="tastingsheet-detail-title col-3">粘性</div>
+            <div class="tastingsheet-detail-content col-9">
+              <% if @tasting_sheet.viscosity.nil? %>
+              <% else %>
+                □ <%= @tasting_sheet.viscosity.option %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tastingsheet-detail row">
+            <div class="tastingsheet-detail-title col-3">外観の印象</div>
+            <div class="tastingsheet-detail-content col-9">
+              <% @tasting_sheet.appearances.each do |item| %>
+                □ <%= item.option %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-tasting-sheet">
+          <h4 class="section-tasting-sheet-title">香り  - Aroma</h4>
+          <div class="tastingsheet-detail row">
+            <div class="tastingsheet-detail-title col-3">第一印象</div>
+            <div class="tastingsheet-detail-content col-9">
+              <% @tasting_sheet.first_impressions.each do |item| %>
+                □ <%= item.option %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tastingsheet-detail row">
+            <div class="tastingsheet-detail-title col-3">香りの要素</div>
+            <div class="tastingsheet-detail-content col-9">
+              <% @tasting_sheet.aroma_elements.each do |item| %>
+                □ <%= item.option %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tastingsheet-detail row">
+            <div class="tastingsheet-detail-title col-3">香りの印象</div>
+            <div class="tastingsheet-detail-content col-9">
+              <% @tasting_sheet.aroma_impressions.each do |item| %>
+                □ <%= item.option %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        
+        <div class="section-tasting-sheet">
+          <h4 class="section-tasting-sheet-title"> 味わい  - Taste</h4>
+          <div class="tastingsheet-detail row">
+            <div class="tastingsheet-detail-title col-3">アタック</div>
+            <div class="tastingsheet-detail-content col-9">
+              <% if @tasting_sheet.attack.nil? %>
+              <% else %>
+                □ <%= @tasting_sheet.attack.option %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tastingsheet-detail row">
+            <div class="tastingsheet-detail-title col-3">甘味</div>
+            <div class="tastingsheet-detail-content col-9">
+              <% if @tasting_sheet.sweetness.nil? %>
+              <% else %>
+                □ <%= @tasting_sheet.sweetness.option %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tastingsheet-detail row">
+            <div class="tastingsheet-detail-title col-3">酸味</div>
+            <div class="tastingsheet-detail-content col-9">
+              <% @tasting_sheet.acidities.each do |item| %>
+                □ <%= item.option %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tastingsheet-detail row">
+            <div class="tastingsheet-detail-title col-3">苦味</div>
+            <div class="tastingsheet-detail-content col-9">
+              <% if @tasting_sheet.bitterness.nil? %>
+              <% else %>
+                □ <%= @tasting_sheet.bitterness.option %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tastingsheet-detail row">
+            <div class="tastingsheet-detail-title col-3">バランス</div>
+            <div class="tastingsheet-detail-content col-9">
+              <% @tasting_sheet.balances.each do |item| %>
+                □ <%= item.option %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tastingsheet-detail row">
+            <div class="tastingsheet-detail-title col-3">アルコール</div>
+            <div class="tastingsheet-detail-content col-9">
+              <% if @tasting_sheet.alcohol.nil? %>
+              <% else %>
+                □ <%= @tasting_sheet.alcohol.option %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tastingsheet-detail row">
+            <div class="tastingsheet-detail-title col-3">余韻</div>
+            <div class="tastingsheet-detail-content col-9">
+              <% if @tasting_sheet.finish.nil? %>
+              <% else %>
+                □ <%= @tasting_sheet.finish.option %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-tasting-sheet">
+          <h4 class="section-tasting-sheet-title">総合  - Overall</h4>
+          <div class="tastingsheet-detail row">
+            <div class="tastingsheet-detail-title col-3">評価</div>
+            <div class="tastingsheet-detail-content col-9">
+              <% if @tasting_sheet.evaluation.nil? %>
+              <% else %>
+                □ <%= @tasting_sheet.evaluation.option %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tastingsheet-detail row">
+            <div class="tastingsheet-detail-title col-3">適正温度</div>
+            <div class="tastingsheet-detail-content col-9">
+              <% if @tasting_sheet.serving_temperature.nil? %>
+              <% else %>
+                □ <%= @tasting_sheet.serving_temperature.option %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tastingsheet-detail row">
+            <div class="tastingsheet-detail-title col-3">グラス</div>
+            <div class="tastingsheet-detail-content col-9">
+              <% if @tasting_sheet.glass.nil? %>
+              <% else %>
+                □ <%= @tasting_sheet.glass.option %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tastingsheet-detail row">
+            <div class="tastingsheet-detail-title col-3">自由記入欄</div>
+            <div class="tastingsheet-detail-content col-9"><%= @tasting_sheet.detail %></div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

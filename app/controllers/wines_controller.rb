@@ -22,6 +22,7 @@ class WinesController < ApplicationController
   end
 
   def show
+    @tasting_sheet = @wine.tasting_sheet
   end
 
   def edit
